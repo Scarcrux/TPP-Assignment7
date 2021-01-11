@@ -1,13 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import GetCity from './components/GetCity'
-import GetData from './components/GetData'
+import GetUrl from './components/GetCity'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <GetCity />
+        <GetUrl />
       </header>
     </div>
   );

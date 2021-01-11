@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-const ZipCard = (props) => {
+const GifCard = (props) => {
   return (
     <div>
       <Container className="mb-4">
@@ -25,4 +25,4 @@ const ZipCard = (props) => {
   );
 };
 
-export default ZipCard;
+export default GifCard;
