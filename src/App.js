@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import GetUrl from './components/GetCity'
+import GetUrl from './components/GetUrl'
 
 function App() {
   return (
