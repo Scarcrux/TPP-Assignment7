@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import GifCard from './GifCard'
 
 export default function GetData(props) {
   const [error, setError] = useState(null);
@@ -11,8 +12,8 @@ export default function GetData(props) {
       .then(res => res.json())
       .then(
         (result) => {
+          setItems(result["data"]);
           setIsLoaded(true);
-          setItems(result);
         },
         (error) => {
           setIsLoaded(true);
@@ -21,20 +22,21 @@ export default function GetData(props) {
       )
   }, [])
 
-  function ZipList(items) {
-    const listItems = items["data"].map((item) =>
-      <li key={item.toString()}>
-        {item}
-      </li>
-    );
-    return (
-      <ul>{listItems}</ul>
-    );
-  }
-    items.data.map(item => {
-      console.log(item.images.fixed_height.url);
-      console.log(item.url);
+ function ZipList(items) {
+  let cards = []
+  if (items) {
+    cards = items.map(item => {
+      <GifCard img={item.images.fixed_width.url}
+               title={item.title}
+               url={item.url}
+      />
     });
+    } else {
+      return <h1>Test</h1>
+    }
+    return cards
+ }
+ console.log(items)
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -42,7 +44,14 @@ export default function GetData(props) {
     return <div>Loading...</div>;
   } else {
     return (
-      <h1>Test</h1>
+      <div>{items && items.map((item, index) =>
+        <GifCard img={item.images.fixed_width.url}
+        id={index}
+        title={item.title}
+        url={item.url}
+      />)
+      }
+      </div>
     );
   }
 }
