@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import GifCard from './GifCard'
+import { Container, Row, Col } from 'reactstrap';
 
 export default function GetData(props) {
   const [error, setError] = useState(null);
@@ -44,14 +45,22 @@ export default function GetData(props) {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>{items && items.map((item, index) =>
-        <GifCard img={item.images.fixed_width.url}
-        id={index}
-      title={item.title}
-      url={item.url}
-      />)
-      }
-      </div>
+        <Container className="no-padding"><Row className="d-flex flex-row justify-content-between align-items-center">{items && items.map((item, index) => {
+            if (index % 4 === 0)
+          return <GifCard img={item.images.fixed_height.url}
+              id={index}
+              title={item.title}
+              url={item.url}
+            />
+            else return <GifCard img={item.images.fixed_height.url}
+            id={index}
+            title={item.title}
+            url={item.url}
+          />
+          })
+        }
+        </Row>
+        </Container>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Tooltip} from 'reactstrap';
+import { Container, Row, Col, Tooltip, Image} from 'reactstrap';
+import './GifCard.css';
 
 export default function GifCard(props) {
   const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -7,9 +8,10 @@ export default function GifCard(props) {
   const toggle = () => setTooltipOpen(!tooltipOpen);
 
   return (
-    <div>
+    <Col xs="12" s="6" m="6" l="3" xl="3">
       <span href="#" id={"Tooltip-" + props.id}>
       <a href={props.url}><img
+        className="img-fluid w-100 h-100"
         src={props.img}
         alt={props.title}
       /></a></span>
@@ -21,6 +23,6 @@ export default function GifCard(props) {
       >
         {props.title}
       </Tooltip>
-    </div>
+    </Col>
   );
 };
