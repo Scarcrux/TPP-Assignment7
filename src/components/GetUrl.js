@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import GetData from './GetData'
 import { Button, Container, Row, Col, Input, InputGroup, InputGroupAddon, InputGroupText } from 'reactstrap';
 
-export default function GetZip() {
+export default function GetUrl() {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [visibility, setVisibility] = React.useState(false);
 
