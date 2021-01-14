@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/TPP-Assignment7/static/css/main.7e1b29e0.chunk.css",
+    "main.js": "/TPP-Assignment7/static/js/main.3f014fda.chunk.js",
+    "main.js.map": "/TPP-Assignment7/static/js/main.3f014fda.chunk.js.map",
+    "runtime-main.js": "/TPP-Assignment7/static/js/runtime-main.6a451cf5.js",
+    "runtime-main.js.map": "/TPP-Assignment7/static/js/runtime-main.6a451cf5.js.map",
+    "static/css/2.86ea06dd.chunk.css": "/TPP-Assignment7/static/css/2.86ea06dd.chunk.css",
+    "static/js/2.b5b31cdd.chunk.js": "/TPP-Assignment7/static/js/2.b5b31cdd.chunk.js",
+    "static/js/2.b5b31cdd.chunk.js.map": "/TPP-Assignment7/static/js/2.b5b31cdd.chunk.js.map",
+    "static/js/3.315a5aae.chunk.js": "/TPP-Assignment7/static/js/3.315a5aae.chunk.js",
+    "static/js/3.315a5aae.chunk.js.map": "/TPP-Assignment7/static/js/3.315a5aae.chunk.js.map",
+    "index.html": "/TPP-Assignment7/index.html",
+    "static/css/2.86ea06dd.chunk.css.map": "/TPP-Assignment7/static/css/2.86ea06dd.chunk.css.map",
+    "static/css/main.7e1b29e0.chunk.css.map": "/TPP-Assignment7/static/css/main.7e1b29e0.chunk.css.map",
+    "static/js/2.b5b31cdd.chunk.js.LICENSE.txt": "/TPP-Assignment7/static/js/2.b5b31cdd.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/TPP-Assignment7/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a451cf5.js",
+    "static/css/2.86ea06dd.chunk.css",
+    "static/js/2.b5b31cdd.chunk.js",
+    "static/css/main.7e1b29e0.chunk.css",
+    "static/js/main.3f014fda.chunk.js"
+  ]
+}
