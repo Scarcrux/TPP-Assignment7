@@ -15,13 +15,13 @@ export default function GifCard(props) {
         src={props.img}
         alt={props.title}
       /></a></span>
-       <Tooltip
+      <Tooltip
         placement="auto"
         isOpen={tooltipOpen}
         target={"Tooltip-" + props.id}
         toggle={toggle}
       >
-        {props.title}
+      {props.title}
       </Tooltip>
     </Col>
   );

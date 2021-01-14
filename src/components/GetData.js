@@ -24,48 +24,33 @@ export default function GetData(props) {
       )
   }, [])
 
- function ZipList(items) {
-  let cards = []
-  if (items) {
-    cards = items.map(item => {
-      <GifCard img={item.images.fixed_height.url}
-               title={item.title}
-               url={item.url}
-      />
-    });
-    } else {
-      return <h1>Test</h1>
-    }
-    return cards
- }
- console.log(items)
-
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div>Loading...</div>;
-  } else if (!Array.isArray(items)){
-    return <Container className="no-padding"><Row className="d-flex flex-row justify-content-between align-items-center">
-      <GifCardEntireColumn img={items.images.fixed_height.url}
-              id={0}
-              title={items.title}
-              url={items.url}
-            />
+  } else if (!Array.isArray(items)) {
+    return <Container className="no-padding">
+        <Row className="d-flex flex-row justify-content-between align-items-center">
+          <GifCardEntireColumn
+            img={items.images.fixed_height.url}
+            id={0}
+            title={items.title}
+            url={items.url}
+          />
         </Row>
-        </Container>
+      </Container>
   } else {
     return (
-
-        <Container className="no-padding"><Row className="d-flex flex-row justify-content-between align-items-center">{items && items.map((item, index) => {
-            return <GifCard img={item.images.fixed_height.url}
+      <Container className="no-padding"><Row className="d-flex flex-row justify-content-between align-items-center">{items && items.map((item, index) => {
+        return <GifCard img={item.images.fixed_height.url}
             id={index}
             title={item.title}
             url={item.url}
           />
-          })
-        }
-        </Row>
-        </Container>
+        })
+      }
+      </Row>
+      </Container>
     );
   }
 }

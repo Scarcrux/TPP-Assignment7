@@ -24,30 +24,30 @@ class GetUrl extends Component {
    handleKeyUp = event => {
     event.preventDefault();
     if (event.key === "Enter") {
-        this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key+1}));
+        this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
     }
   }
 
    handleSubmit = event => {
     event.preventDefault();
-    this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key+1}));
+    this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
   };
 
   handleRandom = event => {
     event.preventDefault();
-    this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/random?api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key+1}));
+    this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/random?api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
   };
 
   render(){
   return (
     <div>
     <div className="mb-4">
-      <div>
+      <Container>
+      <Row className="d-flex justify-content-center my-4">
       <form className="form-horizontal" onSubmit={this.handleKeyUp}>
-      <div className="form-group mt-3">
         <InputGroup>
           <InputGroupAddon addonType="prepend">
-            <InputGroupText>Gif</InputGroupText>
+            <InputGroupText>GIPHY</InputGroupText>
           </InputGroupAddon>
           <Input
             type="text"
@@ -56,18 +56,18 @@ class GetUrl extends Component {
             value={this.state.searchTerm}
           />
         </InputGroup>
-        </div>
-        <div>
-        <InputGroup>
+        </form>
+        </Row>
+        <Row className="d-flex justify-content-center">
+        <InputGroup className="d-flex justify-content-center">
         <Button onClick={this.handleSubmit} className="btn btn-default update-btn">Search</Button>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <Button onClick={this.handleRandom} className="btn btn-default update-btn">Random</Button>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <Button onClick={this.handleClear} className="btn btn-default update-btn">Clear</Button>
         </InputGroup>
-        </div>
-        </form>
-      </div>
+        </Row>
+      </Container>
     </div>
     {this.state.visibility &&
       <GetData key={this.state.key} url={this.state.url}/>
