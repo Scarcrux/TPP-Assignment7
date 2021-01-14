@@ -8,7 +8,7 @@ export default function GifCard(props) {
   const toggle = () => setTooltipOpen(!tooltipOpen);
 
   return (
-    <Col xs="12" s="6" m="6" l="3" xl="3">
+    <Col xs="12" s="12" m="12" l="12" xl="12">
       <span href="#" id={"Tooltip-" + props.id}>
       <a href={props.url}><img
         className="img-fluid"

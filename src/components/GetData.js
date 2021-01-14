@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import GifCard from './GifCard'
+import GifCardEntireColumn from './GifCardEntireColumn'
 import { Container, Row, Col } from 'reactstrap';
 
 export default function GetData(props) {
@@ -27,7 +28,7 @@ export default function GetData(props) {
   let cards = []
   if (items) {
     cards = items.map(item => {
-      <GifCard img={item.images.fixed_width.url}
+      <GifCard img={item.images.fixed_height.url}
                title={item.title}
                url={item.url}
       />
@@ -43,16 +44,20 @@ export default function GetData(props) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
     return <div>Loading...</div>;
+  } else if (!Array.isArray(items)){
+    return <Container className="no-padding"><Row className="d-flex flex-row justify-content-between align-items-center">
+      <GifCardEntireColumn img={items.images.fixed_height.url}
+              id={0}
+              title={items.title}
+              url={items.url}
+            />
+        </Row>
+        </Container>
   } else {
     return (
+
         <Container className="no-padding"><Row className="d-flex flex-row justify-content-between align-items-center">{items && items.map((item, index) => {
-            if (index % 4 === 0)
-          return <GifCard img={item.images.fixed_height.url}
-              id={index}
-              title={item.title}
-              url={item.url}
-            />
-            else return <GifCard img={item.images.fixed_height.url}
+            return <GifCard img={item.images.fixed_height.url}
             id={index}
             title={item.title}
             url={item.url}
