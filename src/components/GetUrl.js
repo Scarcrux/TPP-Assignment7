@@ -24,18 +24,18 @@ class GetUrl extends Component {
    handleKeyUp = event => {
     event.preventDefault();
     if (event.key === "Enter") {
-        this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
+        this.setState(() => ({visibility: true, url: "https://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
     }
   }
 
    handleSubmit = event => {
     event.preventDefault();
-    this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
+    this.setState(() => ({visibility: true, url: "https://api.giphy.com/v1/gifs/search?q="+this.state.searchTerm+"&api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
   };
 
   handleRandom = event => {
     event.preventDefault();
-    this.setState(() => ({visibility: true, url: "http://api.giphy.com/v1/gifs/random?api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
+    this.setState(() => ({visibility: true, url: "https://api.giphy.com/v1/gifs/random?api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH", key: this.state.key + 1}));
   };
 
   render(){
@@ -73,7 +73,7 @@ class GetUrl extends Component {
       <GetData key={this.state.key} url={this.state.url}/>
     }
     {!this.state.visibility &&
-      <GetData url={"http://api.giphy.com/v1/gifs/trending?api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH"} />
+      <GetData url={"https://api.giphy.com/v1/gifs/trending?api_key=221NG6q7QGn01ESd4y9DujrQAAQFzElH"} />
     }
     </div>
   );
